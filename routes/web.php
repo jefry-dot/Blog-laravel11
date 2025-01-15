@@ -25,10 +25,10 @@ Route::get('/posts', function () {
 });
 
 
-Route::get('/posts/{slug}', function ($slug) {
+Route::get('/posts/{post:slug}', function (Post $post) {
    
 
-    $post = Post::find($slug);
+    // $post = Post::find($slug);
 
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
@@ -37,3 +37,6 @@ Route::get('/posts/{slug}', function ($slug) {
 Route::get('/contact', function () {
     return view('contact', ['title'=> 'Contact']);
 });
+
+
+
