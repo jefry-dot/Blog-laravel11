@@ -10,11 +10,11 @@
   <a href="/posts/{{ $post['slug'] }}" class="hover:underline">
   <h2 class="mb-1 text-3xl tracking-light font-bold text-gray-900">{{ $post['title'] }}</h2>
   </a>
-  <div class="text-base text-gray-500 ">
+  <div>
     By
-    <a href="/authors/{{ $post->author->id }}" class="hover:text-gray-900">{{ $post->author->name }}
-    in 
-    </a> | {{ $post->created_at->diffForHumans() }}
+    <a href="/authors/{{ $post->author->username }}" class="hover:text-gray-900 text-base text-gray-500" >{{ $post->author->name }}</a> 
+    In
+    <a href="/categories/{{ $post->category->slug }}" class="hover:text-gray-900 text-base text-gray-500">{{  $post->category->name  }}</a>| {{ $post->created_at->diffForHumans() }}
     
   </div>
   <p class="my-4 font-light">
